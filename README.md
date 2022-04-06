@@ -6,6 +6,29 @@ Notes of Udemy Course **https://www.udemy.com/course/data-engineering-using-aws-
 
 ## Setup local environment
 * Jupyter Lab using Docker
+```
+
+Here are the steps that are involved in setting up jupyter lab using Docker.
+
+You can google for “Jupyter Lab using Docker”
+
+Choose one of the images from the official website. I have chosen jupyter/minimal-notebook
+
+You can run the below commands to start the container with JupyterLab.
+
+docker create \
+-p 9999:8888 \
+--user root \
+-e GRANT_SUDO=yes \
+--name awsanalytics jupyter/minimal-notebook
+ 
+docker start awsanalytics
+ 
+# Use the below command to get the token so that you can login using Jupyter Lab environment.
+docker logs awsanalytics
+Now go to the browser and enter http://localhost:9999/lab and enter the token copied from logs to login.
+```
+
 * Understanding Jupyter Lab Environment
 * Understanding Jupyter Lab Environment
 * Install Python boto3
