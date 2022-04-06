@@ -30,7 +30,25 @@ Now go to the browser and enter http://localhost:9999/lab and enter the token co
 ```
 
 * Understanding Jupyter Lab Environment
-* Understanding Jupyter Lab Environment
+```
+[Instructions] Understanding Jupyter Lab Environment
+Let us understand details related to the Jupyter Lab Environment to explore AWS.
+
+Jupyter Lab provides us an interface to learn the new skills in interactive fashion.
+
+It is developed by the Python extended community to streamline the learning process.
+
+It has several features, but we will primarily use these.
+
+Notebook - To learn Python based libraries interactively
+
+Terminal - To run required shell commands
+
+We will be setting up AWS CLI on this docker container to run AWS commands.
+
+We will also use Python boto3 to interact with AWS Services.
+```
+
 * Install Python boto3
 * Running Shell Commands
 * Install AWS CLI
