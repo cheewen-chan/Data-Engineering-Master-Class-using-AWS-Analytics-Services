@@ -50,8 +50,21 @@ We will also use Python boto3 to interact with AWS Services.
 ```
 
 * Install Python boto3
+```
+Select Boto3 in anaconda pacakges and install
+```
 * Running Shell Commands
+```
+%%sh 
+<COMMANDS>
+```
 * Install AWS CLI
+Run the following commands in Anaconda Jupyter Notebook
+```
+conda update -n base -c defaults conda
+conda install -c conda-forge awscli
+```
+
 
 ## Setup Environment for Practice Cloud 9
 * Introduction to Cloud9
