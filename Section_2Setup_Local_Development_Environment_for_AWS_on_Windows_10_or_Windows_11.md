@@ -42,12 +42,12 @@ rishi@mylocalpc:/mnt/c/Users/Lenovo$
 ```
 
 ```
-PS C:\Users\Lenovo> wsl -d Ubuntu                                                                                       
+PS C:\Users\Lenovo> wsl -d Ubuntu
 To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
 
 rishi@mylocalpc:/mnt/c/Users/Lenovo$
-rishi@mylocalpc:/mnt/c/Users/Lenovo$                                                                                                                                                                                                                                                    
+
 ```
 
 * **Password reset for wsl**
