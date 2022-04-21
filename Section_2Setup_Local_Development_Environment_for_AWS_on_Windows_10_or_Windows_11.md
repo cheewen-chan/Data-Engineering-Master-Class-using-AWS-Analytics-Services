@@ -97,7 +97,7 @@ rishi@mylocalpc:/mnt/c/Users/Lenovo$ sudo apt-get install python
 ## **Setup Python venv and pip on Ubuntu**
 ```
 # install python
-rishi@mylocalpc:/mnt/c/Users/Lenovo$ sudo apt-get install python3-venv
+rishi@mylocalpc:/mnt/c/Users/Lenovo$ sudo apt-get install python3-venv pip
 Reading package lists... Done
 ...........
 # Update list if unable to find packages  
@@ -106,8 +106,24 @@ rishi@mylocalpc:/mnt/c/Users/Lenovo$ sudo apt update
 [sudo] password for rishi:
 
 ```
+* **Validate venv setup**
+```
+rishi@mylocalpc:/home$ sudo python3.8 -m venv demo-venv
+rishi@mylocalpc:/home$ ls demo-venv/
+bin  include  lib  lib64  pyvenv.cfg  share
+```
 
+* **install configparser**
+```
 
+rishi@mylocalpc:/home$ pip install configparser
+Collecting configparser
+  Downloading configparser-5.2.0-py3-none-any.whl (19 kB)
+Installing collected packages: configparser
+Successfully installed configparser-5.2.0
+rishi@mylocalpc:/home$
+
+```
 ## Setup AWS CLI on Windows and Ubuntu using Pip
 
 ```
