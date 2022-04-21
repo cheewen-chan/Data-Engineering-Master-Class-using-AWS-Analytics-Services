@@ -94,16 +94,27 @@ rishi@mylocalpc:/mnt/c/Users/Lenovo$ sudo apt-get install python
 ```
 
 
-* **Setup Python venv and pip on Ubuntu**
+## **Setup Python venv and pip on Ubuntu**
 ```
-sudo apt install python3 python3-pip ipython3
+# install python
+rishi@Atishree:/mnt/c/Users/Lenovo$ sudo apt-get install python3-venv
+Reading package lists... Done
+...........
+# Update list if unable to find packages  
+sudo apt update
+rishi@Atishree:/mnt/c/Users/Lenovo$ sudo apt update
+[sudo] password for rishi:
+
 ```
 
 
-* Setup AWS CLI on Windows and Ubuntu using Pip
-* Create AWS IAM User and Download Credentials
-* Configure AWS CLI on Windows
-* Create Python Virtual Environment for AWS Projects
-* Setup Boto3 as part of Python Virtual Environment
-* Setup Jupyter Lab and Validate boto3
+## Setup AWS CLI on Windows and Ubuntu using Pip
 
+```
+
+```
+## Create AWS IAM User and Download Credentials
+## Configure AWS CLI on Windows
+## Create Python Virtual Environment for AWS Projects
+## Setup Boto3 as part of Python Virtual Environment
+## Setup Jupyter Lab and Validate boto3
