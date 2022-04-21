@@ -125,11 +125,17 @@ rishi@mylocalpc:/home$
 
 ```
 ## Setup AWS CLI on Windows and Ubuntu using Pip
-
+```
+pip install awscli
+# logout and login to wsl
 ```
 
-```
 ## Create AWS IAM User and Download Credentials
+* Create aws user 
+* Give programatic access
+* Assign to Admin Permission group 
+* Download access keys
+
 ## Configure AWS CLI on Windows
 ## Create Python Virtual Environment for AWS Projects
 ## Setup Boto3 as part of Python Virtual Environment
