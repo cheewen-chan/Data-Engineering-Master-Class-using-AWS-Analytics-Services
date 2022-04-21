@@ -97,12 +97,12 @@ rishi@mylocalpc:/mnt/c/Users/Lenovo$ sudo apt-get install python
 ## **Setup Python venv and pip on Ubuntu**
 ```
 # install python
-rishi@Atishree:/mnt/c/Users/Lenovo$ sudo apt-get install python3-venv
+rishi@mylocalpc:/mnt/c/Users/Lenovo$ sudo apt-get install python3-venv
 Reading package lists... Done
 ...........
 # Update list if unable to find packages  
 sudo apt update
-rishi@Atishree:/mnt/c/Users/Lenovo$ sudo apt update
+rishi@mylocalpc:/mnt/c/Users/Lenovo$ sudo apt update
 [sudo] password for rishi:
 
 ```
