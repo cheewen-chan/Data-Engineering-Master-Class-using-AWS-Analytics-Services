@@ -1,4 +1,4 @@
-# Setup_Local_Development_Environment_for_AWS_on_Windows_10_or_Windows_11
+# Setup Local Development Environment for AWS on Windows 10 or Windows 11
 
 ## Section 2 WSL Windows Setup
 * Open Windows Powershell
