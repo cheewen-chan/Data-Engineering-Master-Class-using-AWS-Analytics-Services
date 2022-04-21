@@ -98,8 +98,8 @@ rishi@mylocalpc:/mnt/c/Users/Lenovo$ sudo apt-get install python
 ```
 # install python
 rishi@mylocalpc:/mnt/c/Users/Lenovo$ sudo apt-get install python3-venv pip
-Reading package lists... Done
-...........
+Reading package lists... 
+Done ...........
 # Update list if unable to find packages  
 sudo apt update
 rishi@mylocalpc:/mnt/c/Users/Lenovo$ sudo apt update
@@ -134,9 +134,32 @@ pip install awscli
 * Create aws user 
 * Give programatic access
 * Assign to Admin Permission group 
-* Download access keys
+* Download access keys csv file
+  * Sample File Below
+```
+User name,Password,Access key ID,Secret access key,Console login link
+user1,,ACCESS KEY,SECRET ACCESS KEY,https://118454160685.signin.aws.amazon.com/console
+```
 
 ## Configure AWS CLI on Windows
+```
+rishi@mylocalpc:~$ aws s3 ls
+Unable to locate credentials. You can configure credentials by running "aws configure".
+rishi@mylocalpc:~$ aws configure
+AWS Access Key ID [None]: < ACCESS KEY ID >
+AWS Secret Access Key [None]: < SECRET KEY >
+Default region name [None]:
+Default output format [None]:
+rishi@mylocalpc:~$ aws s3 ls
+2022-02-15 14:22:59 mytrainingcourses
+rishi@mylocalpc:~$
+```
 ## Create Python Virtual Environment for AWS Projects
+```
+```
 ## Setup Boto3 as part of Python Virtual Environment
+```
+```
 ## Setup Jupyter Lab and Validate boto3
+```
+```
