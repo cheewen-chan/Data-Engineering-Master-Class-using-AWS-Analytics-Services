@@ -156,6 +156,26 @@ rishi@mylocalpc:~$
 ```
 ## Create Python Virtual Environment for AWS Projects
 ```
+rishi@mylocalpc:/mnt/c/Users/Lenovo$ mkdir -p /Projects/Internal/bootcamp/data-engineering-on-aws
+rishi@mylocalpc:~$ cd /Projects/Internal/bootcamp/data-engineering-on-aws
+# Make Virtual Environment
+rishi@mylocalpc:~$ sudo python3.8 -m venv demo-venv
+rishi@mylocalpc:~$ ls -ltra demo-venv/
+total 0
+drwxr-xr-x 1 rishi rishi 512 Apr 22 12:01 ..
+drwxr-xr-x 1 root  root  512 Apr 22 12:01 include
+drwxr-xr-x 1 root  root  512 Apr 22 12:01 lib
+lrwxrwxrwx 1 root  root    3 Apr 22 12:01 lib64 -> lib
+-rw-r--r-- 1 root  root   70 Apr 22 12:01 pyvenv.cfg
+drwxr-xr-x 1 root  root  512 Apr 22 12:01 share
+drwxr-xr-x 1 root  root  512 Apr 22 12:01 .
+drwxr-xr-x 1 root  root  512 Apr 22 12:01 bin
+rishi@mylocalpc:~$
+rishi@mylocalpc:~$ 
+# Activate Virtual Environment
+rishi@mylocalpc:~$ source de-venv/bin/activate
+(de-venv) rishi@mylocalpc:~$
+
 ```
 ## Setup Boto3 as part of Python Virtual Environment
 ```
