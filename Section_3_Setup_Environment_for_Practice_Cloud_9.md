@@ -48,6 +48,59 @@ c9ideUser:~/environment $ sudo systemctl status <SERVICE NAME>
 
 ### Cloud9 and EC2
 ### Accessing Web Applications
+```
+c9ideUser:~/environment $ sudo systemctl status httpd
+c9ideUser:~/environment $ sudo systemctl start httpd
+c9ideUser:~/environment $ sudo systemctl status httpd                                                                                                                                                                              
+● httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; vendor preset: disabled)
+  Drop-In: /usr/lib/systemd/system/httpd.service.d
+           └─php-fpm.conf
+   Active: active (running) since Fri 2022-04-22 12:47:02 UTC; 2s ago
+     Docs: man:httpd.service(8)
+ Main PID: 12559 (httpd)
+   Status: "Processing requests..."
+    Tasks: 47
+   Memory: 13.6M
+   CGroup: /system.slice/httpd.service
+           ├─12559 /usr/sbin/httpd -DFOREGROUND
+           ├─12619 /usr/sbin/httpd -DFOREGROUND
+           ├─12621 /usr/sbin/httpd -DFOREGROUND
+           ├─12622 /usr/sbin/httpd -DFOREGROUND
+           ├─12623 /usr/sbin/httpd -DFOREGROUND
+           └─12624 /usr/sbin/httpd -DFOREGROUND
+
+Apr 22 12:47:02 ip-172-31-37-64.ec2.internal systemd[1]: Starting The Apache HTTP Server...
+Apr 22 12:47:02 ip-172-31-37-64.ec2.internal systemd[1]: Started The Apache HTTP Server.
+
+```
+* **Telnet Setup**
+```
+c9ideUser:~/environment $ sudo yum install telnet -y
+c9ideUser:~/environment $ telnet localhost 80
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+^]
+HTTP/1.1 400 Bad Request
+Date: Fri, 22 Apr 2022 12:48:35 GMT
+Server: Apache/2.4.52 ()
+Content-Length: 226
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>400 Bad Request</title>
+</head><body>
+<h1>Bad Request</h1>
+<p>Your browser sent a request that this server could not understand.<br />
+</p>
+</body></html>
+Connection closed by foreign host.
+c9ideUser:~/environment $ 
+```
+
 ### Allocate and Assign Static IP
 ### Changing Permissions using IAM Policies
 ### Increasing Size of EBS Volume
