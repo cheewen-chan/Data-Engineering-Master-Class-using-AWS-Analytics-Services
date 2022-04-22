@@ -3,7 +3,7 @@
 * Setup Cloud9
 ![image](https://user-images.githubusercontent.com/4485129/162073604-d9bb5d8e-ccd9-44dd-a472-5b53ff7252d1.png)
 
-* **Validate in IDE below are installed**
+### **Validate in IDE below are installed**
   * git
   * java  
   * docker
@@ -43,3 +43,15 @@ c9ideUser:~/environment $
 ```
 c9ideUser:~/environment $ sudo systemctl status <SERVICE NAME>
 ```
+
+### Docker and AWS CLI on Cloud9
+
+### Cloud9 and EC2
+### Accessing Web Applications
+### Allocate and Assign Static IP
+### Changing Permissions using IAM Policies
+### Increasing Size of EBS Volume
+### Opening ports for Cloud9 Instance
+### Setup Jupyter lab on Cloud9 Instance
+### Open SSH Port for Cloud9 EC2 Instance
+### Connect to Cloud9 EC2 Instance using SSH
