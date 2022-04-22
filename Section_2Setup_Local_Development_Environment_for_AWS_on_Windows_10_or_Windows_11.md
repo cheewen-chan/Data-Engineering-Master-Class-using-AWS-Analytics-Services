@@ -241,3 +241,35 @@ Successfully installed MarkupSafe-2.1.1 ..... zipp-3.8.0
      or http://127.0.0.1:8889/lab?token=42b012231384f2cffc09383077b61031de1d7fa0222bd54c
 
 ```
+
+
+* **Validating Jupyter notebook connecting with AWS**
+```
+import boto3
+s3_client = boto3.client('s3')
+
+buckets = s3_client.list_buckets()['Buckets']
+buckets
+            [{'Name': 'mega.nz',
+            'CreationDate': datetime.datetime(2022, 2, 15, 8, 50, 33, tzinfo=tzutc())},
+            {'Name': 'mytradingcourses',
+            'CreationDate': datetime.datetime(2022, 2, 15, 8, 52, 59, tzinfo=tzutc())}]
+
+
+buckets_name = buckets[1]['Name']
+buckets_name
+            'mytradingcourses'
+
+
+bucket = buckets[0]
+bucket
+            {'Name': 'mega.nz',
+            'CreationDate': datetime.datetime(2022, 2, 15, 8, 50, 33, tzinfo=tzutc())}
+
+
+buckets_names = [bucket['Name'] for bucket in buckets]
+
+buckets_names
+            ['mega.nz', 'mytradingcourses']
+
+```
