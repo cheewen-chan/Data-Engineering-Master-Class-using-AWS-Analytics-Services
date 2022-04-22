@@ -179,7 +179,65 @@ rishi@mylocalpc:~$ source de-venv/bin/activate
 ```
 ## Setup Boto3 as part of Python Virtual Environment
 ```
+rishi@mylocalpc:~$ source de-venv/bin/activate
+(de-venv) rishi@mylocalpc:~$ pip install boto3
+Collecting boto3
+  Downloading boto3-1.21.45-py3-none-any.whl (132 kB)
+     |████████████████████████████████| 132 kB 4.9 MB/s
+Collecting jmespath<2.0.0,>=0.7.1
+  Using cached jmespath-1.0.0-py3-none-any.whl (23 kB)
+Collecting botocore<1.25.0,>=1.24.45
+  Downloading botocore-1.24.45-py3-none-any.whl (8.7 MB)
+     |████████████████████████████████| 8.7 MB 7.5 MB/s
+Collecting s3transfer<0.6.0,>=0.5.0
+  Using cached s3transfer-0.5.2-py3-none-any.whl (79 kB)
+Collecting urllib3<1.27,>=1.25.4
+  Downloading urllib3-1.26.9-py2.py3-none-any.whl (138 kB)
+     |████████████████████████████████| 138 kB 10.3 MB/s
+Collecting python-dateutil<3.0.0,>=2.1
+  Using cached python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+Collecting six>=1.5
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: jmespath, urllib3, six, python-dateutil, botocore, s3transfer, boto3
+Successfully installed boto3-1.21.45 botocore-1.24.45 jmespath-1.0.0 python-dateutil-2.8.2 s3transfer-0.5.2 six-1.16.0 urllib3-1.26.9
+(de-venv) rishi@mylocalpc:~$
+
+(de-venv) rishi@mylocalpc:~$ python
+Python 3.8.10 (default, Mar 15 2022, 12:22:08)
+[GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import boto3
+>>> s3_client = boto3.client('s3')
+>>> s3_client.list_buckets()
+{'ResponseMetadata': {'RequestId': '9WQT15TNH7DWZMRP', 'HostId': 'IO84Ao0lWZGBuHHqhXrObi/pdPonxvvx1/KIXJSJ8NP6fMeD5hctOaokEk2M7Il6CepBL5kwnbQ=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'IO84Ao0lWZGBuHHqhXrObi/pdPonxvvx1/KIXJSJ8NP6fMeD5hctOaokEk2M7Il6CepBL5kwnbQ=', 'x-amz-request-id': '9WQT15TNH7DWZMRP', 'date': 'Fri, 22 Apr 2022 06:49:24 GMT', 'content-type': 'application/xml', 'transfer-encoding': 'chunked', 'server': 'AmazonS3'}, 'RetryAttempts': 0}, 'Buckets': [{'Name': 'mega.nz', 'CreationDate': datetime.datetime(2022, 2, 15, 8, 50, 33, tzinfo=tzutc())}, {'Name': 'mytradingcourses', 'CreationDate': datetime.datetime(2022, 2, 15, 8, 52, 59, tzinfo=tzutc())}], 'Owner': {'DisplayName': 'ris.arora', 'ID': '2fedc5e5b66770f2381ece35fd51398c644f15e62bc50837c9178161cd6fa9c8'}}
+>>>
 ```
+
 ## Setup Jupyter Lab and Validate boto3
 ```
+(de-venv) rishi@mylocalpc:~$ pip install jupyterlab
+Collecting jupyterlab
+  Downloading jupyterlab-3.3.4-py3-none-any.whl (8.7 MB)
+     |████████████████████████████████| 8.7 MB 346 kB/s
+
+Installing collected packages: prometheus-client, ....., jupyterlab
+Successfully installed MarkupSafe-2.1.1 ..... zipp-3.8.0
+(de-venv) rishi@mylocalpc:~$
+(de-venv) rishi@mylocalpc:~$ pip install jupyterlab
+^CERROR: Operation cancelled by user
+(de-venv) rishi@mylocalpc:~$ jupyter lab
+[I 2022-04-22 12:31:51.359 ServerApp] jupyterlab | extension was successfully linked.
+...
+[I 2022-04-22 12:31:54.366 ServerApp] Jupyter Server 1.16.0 is running at:
+[I 2022-04-22 12:31:54.367 ServerApp] http://localhost:8889/lab?token=42b012231384f2cffc09383077b61031de1d7fa0222bd54c
+[I 2022-04-22 12:31:54.368 ServerApp]  or http://127.0.0.1:8889/lab?token=42b012231384f2cffc09383077b61031de1d7fa0222bd54c
+[I 2022-04-22 12:31:54.368 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2022-04-22 12:31:54.422 ServerApp]
+
+    To access the server, open this file in a browser:
+        file:///home/rishi/.local/share/jupyter/runtime/jpserver-7016-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/lab?token=42b012231384f2cffc09383077b61031de1d7fa0222bd54c
+     or http://127.0.0.1:8889/lab?token=42b012231384f2cffc09383077b61031de1d7fa0222bd54c
+
 ```
