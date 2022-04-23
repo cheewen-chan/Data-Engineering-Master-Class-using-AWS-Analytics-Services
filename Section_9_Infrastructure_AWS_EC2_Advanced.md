@@ -66,10 +66,262 @@ Create instance using aws cli
 
 ```
 aws ec2 run-instances \
-  --image-id ami-013f17f36f8b1fefb \
-  --count 1 \
+  --image-id ami-0dc22b673db40ca05 \
+  --count 2 \
   --instance-type t2.micro \
-  --key-name keyname \
+  --key-name DE-AWS \
   --security-group-ids sg-ID \
   --user-data file://ec2_user_data.sh
+```
+
+* **SampleRun**
+```
+rishi@mylocalpc:~$ cat bootstrap.sh
+#!/bin/bash
+apt update -y
+apt install apache2 -y
+apt install python3-pip -y
+python3 -m pip install awscli
+rishi@mylocalpc:~$ aws ec2 run-instances \
+>   --image-id ami-0dc22b673db40ca05 \
+>   --count 2 \
+>   --instance-type t2.micro \
+>   --key-name DE-AWS \
+>   --user-data ec2_user_data.sh
+
+rishi@mylocalpc:~$ aws ec2 run-instances   --image-id ami-0dc22b673db40ca05   --count 2   --instance-type t2.micro   --key-name DE-AWS   --user-data ec2_user_data.sh
+{
+    "Groups": [],
+    "Instances": [
+        {
+            "AmiLaunchIndex": 0,
+            "ImageId": "ami-0dc22b673db40ca05",
+            "InstanceId": "i-080b4ebb059b71c66",
+            "InstanceType": "t2.micro",
+            "KeyName": "DE-AWS",
+            "LaunchTime": "2022-04-23T08:55:23.000Z",
+            "Monitoring": {
+                "State": "disabled"
+            },
+            "Placement": {
+                "AvailabilityZone": "us-east-1b",
+                "GroupName": "",
+                "Tenancy": "default"
+            },
+            "PrivateDnsName": "ip-172-31-2-226.ec2.internal",
+            "PrivateIpAddress": "172.31.2.226",
+            "ProductCodes": [],
+            "PublicDnsName": "",
+            "State": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "StateTransitionReason": "",
+            "SubnetId": "subnet-0d16aa20871111f4e",
+            "VpcId": "vpc-066119b989a2011c2",
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "3ad5fbf6-1bf5-497f-892e-4f07fe07a2dd",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "NetworkInterfaces": [
+                {
+                    "Attachment": {
+                        "AttachTime": "2022-04-23T08:55:23.000Z",
+                        "AttachmentId": "eni-attach-0d7b846ffa9a63c5f",
+                        "DeleteOnTermination": true,
+                        "DeviceIndex": 0,
+                        "Status": "attaching",
+                        "NetworkCardIndex": 0
+                    },
+                    "Description": "",
+                    "Groups": [
+                        {
+                            "GroupName": "default",
+                            "GroupId": "sg-013750fe616f6597b"
+                        }
+                    ],
+                    "Ipv6Addresses": [],
+                    "MacAddress": "02:70:93:64:c3:23",
+                    "NetworkInterfaceId": "eni-0761c5782fe9aed90",
+                    "OwnerId": "118454160685",
+                    "PrivateDnsName": "ip-172-31-2-226.ec2.internal",
+                    "PrivateIpAddress": "172.31.2.226",
+                    "PrivateIpAddresses": [
+                        {
+                            "Primary": true,
+                            "PrivateDnsName": "ip-172-31-2-226.ec2.internal",
+                            "PrivateIpAddress": "172.31.2.226"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Status": "in-use",
+                    "SubnetId": "subnet-0d16aa20871111f4e",
+                    "VpcId": "vpc-066119b989a2011c2",
+                    "InterfaceType": "interface"
+                }
+            ],
+            "RootDeviceName": "/dev/xvda",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+                {
+                    "GroupName": "default",
+                    "GroupId": "sg-013750fe616f6597b"
+                }
+            ],
+            "SourceDestCheck": true,
+            "StateReason": {
+                "Code": "pending",
+                "Message": "pending"
+            },
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+                "CoreCount": 1,
+                "ThreadsPerCore": 1
+            },
+            "CapacityReservationSpecification": {
+                "CapacityReservationPreference": "open"
+            },
+            "MetadataOptions": {
+                "State": "pending",
+                "HttpTokens": "optional",
+                "HttpPutResponseHopLimit": 1,
+                "HttpEndpoint": "enabled",
+                "HttpProtocolIpv6": "disabled",
+                "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+                "Enabled": false
+            },
+            "PrivateDnsNameOptions": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "MaintenanceOptions": {
+                "AutoRecovery": "default"
+            }
+        },
+        {
+            "AmiLaunchIndex": 1,
+            "ImageId": "ami-0dc22b673db40ca05",
+            "InstanceId": "i-0177dc35ea8c54b2a",
+            "InstanceType": "t2.micro",
+            "KeyName": "DE-AWS",
+            "LaunchTime": "2022-04-23T08:55:23.000Z",
+            "Monitoring": {
+                "State": "disabled"
+            },
+            "Placement": {
+                "AvailabilityZone": "us-east-1b",
+                "GroupName": "",
+                "Tenancy": "default"
+            },
+            "PrivateDnsName": "ip-172-31-5-103.ec2.internal",
+            "PrivateIpAddress": "172.31.5.103",
+            "ProductCodes": [],
+            "PublicDnsName": "",
+            "State": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "StateTransitionReason": "",
+            "SubnetId": "subnet-0d16aa20871111f4e",
+            "VpcId": "vpc-066119b989a2011c2",
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "3ad5fbf6-1bf5-497f-892e-4f07fe07a2dd",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "NetworkInterfaces": [
+                {
+                    "Attachment": {
+                        "AttachTime": "2022-04-23T08:55:23.000Z",
+                        "AttachmentId": "eni-attach-03e7d8af7d20eb419",
+                        "DeleteOnTermination": true,
+                        "DeviceIndex": 0,
+                        "Status": "attaching",
+                        "NetworkCardIndex": 0
+                    },
+                    "Description": "",
+                    "Groups": [
+                        {
+                            "GroupName": "default",
+                            "GroupId": "sg-013750fe616f6597b"
+                        }
+                    ],
+                    "Ipv6Addresses": [],
+                    "MacAddress": "02:1f:c0:0a:55:17",
+                    "NetworkInterfaceId": "eni-03cc0ed39fff6c59d",
+                    "OwnerId": "118454160685",
+                    "PrivateDnsName": "ip-172-31-5-103.ec2.internal",
+                    "PrivateIpAddress": "172.31.5.103",
+                    "PrivateIpAddresses": [
+                        {
+                            "Primary": true,
+                            "PrivateDnsName": "ip-172-31-5-103.ec2.internal",
+                            "PrivateIpAddress": "172.31.5.103"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Status": "in-use",
+                    "SubnetId": "subnet-0d16aa20871111f4e",
+                    "VpcId": "vpc-066119b989a2011c2",
+                    "InterfaceType": "interface"
+                }
+            ],
+            "RootDeviceName": "/dev/xvda",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+                {
+                    "GroupName": "default",
+                    "GroupId": "sg-013750fe616f6597b"
+                }
+            ],
+            "SourceDestCheck": true,
+            "StateReason": {
+                "Code": "pending",
+                "Message": "pending"
+            },
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+                "CoreCount": 1,
+                "ThreadsPerCore": 1
+            },
+            "CapacityReservationSpecification": {
+                "CapacityReservationPreference": "open"
+            },
+            "MetadataOptions": {
+                "State": "pending",
+                "HttpTokens": "optional",
+                "HttpPutResponseHopLimit": 1,
+                "HttpEndpoint": "enabled",
+                "HttpProtocolIpv6": "disabled",
+                "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+                "Enabled": false
+            },
+            "PrivateDnsNameOptions": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "MaintenanceOptions": {
+                "AutoRecovery": "default"
+            }
+        }
+    ],
+    "OwnerId": "118454160685",
+    "ReservationId": "r-07dbe00843ac205ee"
+}
+rishi@mylocalpc:~$ aws ec2 describe-instances | grep -i instanceid
+
+                    "InstanceId": "i-0ccf2182410eb42d8",
+                    "InstanceId": "i-080b4ebb059b71c66",
+                    "InstanceId": "i-0177dc35ea8c54b2a",
+rishi@mylocalpc:~$
+rishi@mylocalpc:~$
 ```
