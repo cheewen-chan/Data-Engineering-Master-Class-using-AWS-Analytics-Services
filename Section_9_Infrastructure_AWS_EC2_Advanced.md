@@ -43,6 +43,23 @@ aws ec2 create-image \
   --description "A sample AMI with pre installed apache web server"
 ```
 
+* **Sample Run**
+```
+rishi@mylocalpc:~$ aws ec2 describe-instances | grep -i instanceid
+                    "InstanceId": "i-0ccf2182410eb42d8",
+rishi@mylocalpc:~$ 
+
+rishi@mylocalpc:~$ aws ec2 create-image \
+                    --instance-id "i-0ccf2182410eb42d8" \
+                    --name my-DE-AMI \
+                    --description "my First APi Image"
+{
+    "ImageId": "ami-0dc22b673db40ca05"
+}
+rishi@mylocalpc:~$
+
+```
+
 ## Create an AWS AMI using AWS EC2 Instances
 
 Create instance using aws cli
