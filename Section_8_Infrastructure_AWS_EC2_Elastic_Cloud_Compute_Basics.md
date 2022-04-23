@@ -1,3 +1,11 @@
+## Connect to ec 2
+* get the connection details from the 'Connect' button on the instances section of ec2
+``
+ssh -i ~/.ssh/itvaws.pem \
+ubuntu@ec2-34-232-68-20.compute-1.amazonaws.com
+```
+
+
 ## Managing EC2 Using AWS CLI
 * Let us understand how we can manage EC2 Instances using AWS CLI.
 * We should be able to take care of all the tasks related to managing EC2 Instances via AWS CLI. Here are some of the examples.
